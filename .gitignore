@@ -1,0 +1,6 @@
+.env
+*.log
+.env
+app.tar.gz
+*.log
+.idea/

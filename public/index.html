@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дашборд воронки продаж</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1>Воронка продаж</h1>
+      <form id="periodForm" class="period-form">
+        <label>С <input type="date" id="dateFrom" /></label>
+        <label>По <input type="date" id="dateTo" /></label>
+        <button type="submit">Применить</button>
+      </form>
+    </header>
+
+    <main id="content">
+      <div id="stateMessage" class="state-message" hidden></div>
+
+      <section id="kpiSection" class="kpi-grid" hidden>
+        <div class="kpi-card">
+          <span class="kpi-label">Сумма открытых сделок</span>
+          <span class="kpi-value" id="kpiOpenAmount">—</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Выиграно сделок за период</span>
+          <span class="kpi-value" id="kpiWonCount">—</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Средний чек</span>
+          <span class="kpi-value" id="kpiAvgCheck">—</span>
+        </div>
+      </section>
+
+      <section id="funnelSection" hidden>
+        <h2>Стадии воронки</h2>
+        <div id="funnelChart" class="funnel-chart"></div>
+      </section>
+
+      <section id="recentSection" hidden>
+        <h2>Последние сделки</h2>
+        <table id="recentTable" class="recent-table">
+          <thead>
+            <tr>
+              <th>Сделка</th>
+              <th>Сумма</th>
+              <th>Стадия</th>
+              <th>Ответственный</th>
+              <th>Создана</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
